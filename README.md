@@ -10,7 +10,7 @@ This step is crucial for ensuring the accuracy of the model. The training images
 ## 2. Install TensorFlow Object Detection Dependencies
 I chose to install the TensorFlow Object Detection API in Google Colab for its convenience. This involves cloning the TensorFlow models [repository](https://github.com/tensorflow/models) and executing a couple of installation commands. You can access the code segment in the Google Colab instance where I trained the model.
 
-## 3. Upload Image Dataset and Prepare Training Data
+## 3. Upload Image Dataset and Prepare Training Data
 We'll upload our images, split them into train, validation, and test folders, and then run scripts for creating TFRecords from our data.
 First, on your local PC, zip all your training images and XML files into a single folder called "images.zip". The files should be directly inside the zip folder, or in a nested folder as shown below:
 
@@ -22,5 +22,22 @@ images.zip
   -- img2.xml
   ...
 
-## 4. Set Up Training Configuration
-In this section, we'll set up the model and training configuration. We'll specifiy which pretrained TensorFlow model we want to use from the TensorFlow 2 Object Detection Model Zoo. For this project I used [http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_320x320_coco17_tpu-8.tar.gz]
+## 4. Set Up Training Configuration
+In this section, we'll set up the model and training configuration. We'll specifiy which pretrained TensorFlow model we want to use from the [TensorFlow 2 Object Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md). For this project I used ssd-mobilenet-v2-fpnlite-320.
+
+## 5. Train Custom TFLite Detection Model
+This is the PLACE where we struggle the most. We're ready to train our object detection model! Model training is performed using the "model_main_tf2.py" script from the TF Object Detection API. Training will take anywhere from 2 to 6 hours, depending on the model, batch size, and number of training steps.
+
+## 6. Convert Model to TensorFlow Lite
+Yuppiee! Our model is all trained up and ready to be used for detecting objects. 
+
+## 7. Test TensorFlow Lite Model and Calculate mAP
+We've trained our custom model and converted it to TFLite format. But how well does it actually perform at detecting objects in images? This is where the images we set aside in the test folder come in. The model never saw any test images during training, so its performance on these images should be representative of how it will perform on new images from the field.
+
+## 8. Deploy TensorFlow Lite Model
+Now that your custom model has been trained and converted to TFLite format, it's ready to be downloaded and deployed in an application!
+
+Here are links to the deployment guides for Windows, Linux, and macOS:
+* [How to Run TensorFlow Lite Models on Windows](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/deploy_guides/Windows_TFLite_Guide.md)
+* [How to Run TensorFlow Lite Models on macOS](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/deploy_guides/MacOS_TFLite_Guide.md)
+
