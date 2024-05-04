@@ -14,6 +14,7 @@ I chose to install the TensorFlow Object Detection API in Google Colab for its c
 In this step, we will upload our images, organize them into train, validation, and test folders, and convert them into TFRecords format for training.
 First, on your local PC, zip all your training images and XML files into a single folder called "images.zip". The files should be directly inside the zip folder, or in a nested folder as shown below:
 
+
 images.zip
 -- images
   -- img1.jpg
@@ -21,6 +22,7 @@ images.zip
   -- img2.jpg
   -- img2.xml
   ...
+
 
 ## 4. Set Up Training Configuration
 In this section, we'll set up the model and training configuration. We'll specifiy which pretrained TensorFlow model we want to use from the [TensorFlow 2 Object Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md). For this project I used ssd-mobilenet-v2-fpnlite-320.
