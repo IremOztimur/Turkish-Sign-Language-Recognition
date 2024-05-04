@@ -11,7 +11,7 @@ This step is crucial for ensuring the accuracy of the model. The training images
 I chose to install the TensorFlow Object Detection API in Google Colab for its convenience. This involves cloning the TensorFlow models [repository](https://github.com/tensorflow/models) and executing a couple of installation commands. You can access the code segment in the Google Colab instance where I trained the model.
 
 ## 3. Upload Image Dataset and Prepare Training Data
-We'll upload our images, split them into train, validation, and test folders, and then run scripts for creating TFRecords from our data.
+In this step, we will upload our images, organize them into train, validation, and test folders, and convert them into TFRecords format for training.
 First, on your local PC, zip all your training images and XML files into a single folder called "images.zip". The files should be directly inside the zip folder, or in a nested folder as shown below:
 
 images.zip
