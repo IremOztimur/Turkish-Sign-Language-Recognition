@@ -15,14 +15,7 @@ In this step, we will upload our images, organize them into train, validation, a
 First, on your local PC, zip all your training images and XML files into a single folder called "images.zip". The files should be directly inside the zip folder, or in a nested folder as shown below:
 
 
-images.zip
--- images
-  -- img1.jpg
-  -- img1.xml
-  -- img2.jpg
-  -- img2.xml
-  ...
-
+<img width="260" alt="Screenshot 2024-05-04 at 17 15 40" src="https://github.com/IremOztimur/Turkish-Sign-Language-Detector/assets/77894816/fea38277-c2e8-4345-aab9-fe377a93e506">
 
 ## 4. Set Up Training Configuration
 In this section, we'll set up the model and training configuration. We'll specifiy which pretrained TensorFlow model we want to use from the [TensorFlow 2 Object Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md). For this project I used ssd-mobilenet-v2-fpnlite-320.
